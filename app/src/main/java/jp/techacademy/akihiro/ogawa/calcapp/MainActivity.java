@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,12 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String text1 = mEditText1.getText().toString();
         String text2 = mEditText2.getText().toString();
         // mEditText1のテキストを取得
-        int value1 = 0;
-        int value2 = 0;
+        Double value1 = 0.0;
+        Double value2 = 0.0;
         int value3 = 0;
         try {
-            value1 = Integer.parseInt(text1);        //ここでNmberFormatExceptionが投げられる可能性がある
-            value2 = Integer.parseInt(text2);
+            value1 = Double.parseDouble(text1);        //ここでNmberFormatExceptionが投げられる可能性がある
+            value2 = Double.parseDouble(text2);
+ //           Log.d("javatest", String.valueOf(value1));
             // String → intへ変換
             switch (v.getId()) {              //押されたボタン判定
                 case R.id.button1:
